@@ -41,11 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
-    <Compile Include="Conversation.cs" />
+    <Compile Include="Dialog.cs" />
     <Compile Include="Dialog\ChoiceAction.cs" />
     <Compile Include="Dialog\ConditionalAction.cs" />
+    <Compile Include="Dialog\MessageAction.cs" />
     <Compile Include="Dialog\DialogAction.cs" />
-    <Compile Include="Dialog\StoryAction.cs" />
     <Compile Include="StoryGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

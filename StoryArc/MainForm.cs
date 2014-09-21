@@ -17,6 +17,7 @@ namespace StoryArc
         {
             InitializeComponent();
             this.characterEditor.Characters = game.Characters;
+            this.dialogEditor.StoryGame = game;
         }
     }
 }

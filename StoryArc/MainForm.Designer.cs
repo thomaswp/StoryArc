@@ -113,8 +113,8 @@
             // tsmiSaveAs
             // 
             this.tsmiSaveAs.Name = "tsmiSaveAs";
-            this.tsmiSaveAs.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
-                        | System.Windows.Forms.Keys.S)));
+            this.tsmiSaveAs.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
             this.tsmiSaveAs.Size = new System.Drawing.Size(228, 24);
             this.tsmiSaveAs.Text = "Save As...";
             // 
@@ -247,10 +247,12 @@
             this.dialogEditor.Location = new System.Drawing.Point(3, 3);
             this.dialogEditor.Name = "dialogEditor";
             this.dialogEditor.Size = new System.Drawing.Size(1134, 659);
+            this.dialogEditor.StoryGame = null;
             this.dialogEditor.TabIndex = 0;
             // 
             // characterEditor
             // 
+            this.characterEditor.Characters = null;
             this.characterEditor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.characterEditor.Location = new System.Drawing.Point(3, 3);
             this.characterEditor.Name = "characterEditor";

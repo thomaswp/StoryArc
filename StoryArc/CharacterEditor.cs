@@ -21,7 +21,7 @@ namespace StoryArc
             set
             {
                 _characters = value;
-                updateCharacters();
+                if (value != null) updateCharacters();
             }
         }
 
@@ -31,9 +31,9 @@ namespace StoryArc
         public CharacterEditor()
         {
             InitializeComponent();
-            bindings.AddBindings(new TextBoxBinding(this.textBoxFirstName, typeof(Character).GetProperty("FirstName")),
-                    new TextBoxBinding(this.textBoxMiddleName, typeof(Character).GetProperty("MiddleName")),
-                    new TextBoxBinding(this.textBoxLastName, typeof(Character).GetProperty("LastName")));
+            bindings.AddBindings(new TextBoxBinding(this.textBoxFirstName, new PropertyAccessor(typeof(Character).GetProperty("FirstName"))),
+                    new TextBoxBinding(this.textBoxMiddleName, new PropertyAccessor(typeof(Character).GetProperty("MiddleName"))),
+                    new TextBoxBinding(this.textBoxLastName, new PropertyAccessor(typeof(Character).GetProperty("LastName"))));
 
             bindings.OnControlEdited += new EventHandler(bindings_OnControlEdited);
         }

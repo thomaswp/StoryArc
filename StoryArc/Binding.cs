@@ -12,7 +12,7 @@ namespace StoryArc
         public event EventHandler OnControlEdited;
 
         private readonly Control control;
-        private readonly PropertyInfo field;
+        private readonly Accessor accessor;
         private bool manualUpdate;
 
         protected abstract void SetValue(object value);
@@ -29,10 +29,10 @@ namespace StoryArc
             }
         }
 
-        public Binding(Control control, PropertyInfo field)
+        public Binding(Control control, Accessor accessor)
         {
             this.control = control;
-            this.field = field;
+            this.accessor = accessor;
         }
 
         public void UpdateControl()
@@ -46,7 +46,7 @@ namespace StoryArc
             {
                 this.control.Enabled = true;
                 manualUpdate = true;
-                SetValue(field.GetValue(Target, null));
+                SetValue(accessor.GetValue(Target));
                 manualUpdate = false;
             }
         }
@@ -54,7 +54,7 @@ namespace StoryArc
         protected void controlValueChanged(object sender, EventArgs e)
         {
             if (Target == null || manualUpdate) return;
-            field.SetValue(Target, GetValue(), null);
+            accessor.SetValue(Target, GetValue());
             OnControlEdited(sender, e);
         }
     }

@@ -8,17 +8,19 @@ namespace StoryArc
     public class StoryGame
     {
         public List<Character> Characters { get; private set; }
-        public List<Conversation> Conversations { get; private set; }
+        public List<Dialog> Dialogs { get; private set; }
 
         public StoryGame() 
         {
             Characters = new List<Character>();
-            Conversations = new List<Conversation>();
+            Dialogs = new List<Dialog>();
         }
 
-        public Conversation CreateConversation()
+        public Dialog AddDialog()
         {
-            return new Conversation(this);
+            Dialog dialog = new Dialog(this);
+            Dialogs.Add(dialog);
+            return dialog;
         }
     }
 }
